@@ -1,12 +1,11 @@
 var inquirer = require('inquirer');
 var Word = require('./construct.js');
 
+// Creates unknown word and dash-string
 var unknownWord = new Word();
 unknownWord.getWord();
 unknownWord.toString();
 
-// console.log(unknownWord.word);
-// console.log(s);
 
 console.log("Lets play a game of hangman");
 console.log("think animals");
@@ -22,11 +21,9 @@ function turn() {
 	]).then( function(input) {
 
 		if(unknownWord.attempts !== 0) {
+			//Checks letter if within word
 			var pos = unknownWord.letterCheck(input.letter);
-
-			// console.log(pos);
-			// console.log(unknownWord.string);
-			console.log();
+			
 			for(var i = 0; i<pos.length; i++) {
 			   var index = pos[i] *2;
 			   unknownWord.string = unknownWord.string.substring(0, index) + input.letter + unknownWord.string.substring(index + 1);
