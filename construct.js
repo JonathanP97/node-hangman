@@ -8,7 +8,7 @@ function Word() {
 	this.word = null,
 	//string which contains dashes
 	this.string = "",
-	this.attempts = 6,
+	this.attempts = 8,
 	//determines random word using array
 	this.getWord = function() {
 		var num = Math.floor( Math.random() * wordBank.length );
